@@ -20,6 +20,8 @@ public class MainActivity extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "onCreate");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -28,6 +30,8 @@ public class MainActivity extends Activity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        Log.i(TAG, "onCreateOptionsMenu");
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
@@ -95,6 +99,8 @@ public class MainActivity extends Activity{
                         str += msgs[i].getMessageBody();
                         str += "\n";
                     }
+
+                    Log.d("TAG", "onReceive - SMS received in inner class: "+str);
 
                     smsTextView.setText(str);
                 }
